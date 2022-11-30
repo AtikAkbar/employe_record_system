@@ -34,16 +34,16 @@ Data of the Employees:
 // long int size = sizeof(e);
 
 // // in the start coordinate will be (0,0)
-// COORD cord = {0,0};
+COORD cord = {0,0};
 
 // // function to set coordinates 
-// void gotoxy(int x, int y)
-// {
-//     cord.X = x;
-//     cord.Y = y;
-//     SetConsoleCursorPosition(
-//         GetStdHandle(STD_OUTPUT_HANDLE),cord);
-// }
+void gotoxy(int x, int y)
+{
+    cord.X = x;
+    cord.Y = y;
+    SetConsoleCursorPosition(
+        GetStdHandle(STD_OUTPUT_HANDLE),cord);
+}
 
 FILE *fp, *ft;
 
@@ -52,7 +52,7 @@ FILE *fp, *ft;
 int main()
 {
 
-    // int choice;
+    int choice;
 
     // opening the file
     // fp = fopen("data.txt","rb+");
@@ -96,9 +96,29 @@ int main()
            "\n\n\t\t\t\t");
 
     // the exe file will not automaticaly close
-
+    system("pause");
+    // printf("Press any button to continue...");
     // getchar();
 
-
+    while (1)
+    {
+        //clearing console
+        system("cls");
+        gotoxy(10, 10);
+        printf("\n1. ADD RECORD\n");
+        gotoxy(30, 12);
+        printf("\n2. DELETE RECORD\n");
+        gotoxy(30, 14);
+        printf("\n3. DISPLAY RECORDS\n");
+        gotoxy(30, 16);
+        printf("\n4. MODIFY RECORD\n");
+        gotoxy(30, 18);
+        printf("\n5. EXIT\n");
+        gotoxy(30, 20);
+        printf("\nENTER YOUR CHOICE...\n");
+        // fflush(stdin);
+        scanf("%d", &choice);
+    }
+    
 
 }
